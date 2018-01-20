@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/Second.js"></script>
+    <script>
+        function countRabbits() {
+            for(var i = 1; i < 3; i++){
+                alert("Кролик номер " + i);
+            }
+        }
+    </script>
+</head>
+<body>
+<!--первый способ-->
+<input value="Нажми на меня" onclick="alert('Клик')" type="button">
+<input value="Считать кроликов" onclick="countRabbits()" type="button">
+<input id="elem" type="button" value="Кликни">
+<script>
+    elem.onclick = function () {
+      alert('Спасибо');
+    };
+</script>
+<input type="button" id="element" onclick="alert('До')" value="Нажми"/>
+<script>
+    element.onclick = function () {// Перезапишет существуеший обработчик
+        alert('После')
+    }
+    element.onclick = null; // Если обработчик надоел =)
+</script>
+
+<!--Доступ к элементу через this-->
+<button onclick="alert(this.innerHTML)"> Жми! </button>
+
+<!--Добавление нескольких обработчиков на одно событие-->
+<input id="elem1" type="button" value="Нажми меня"/>
+<script>
+    function handler1() {
+        alert('Спасибо!');
+    };
+
+    function handler2() {
+        alert('Спасибо ещё раз!');
+    }
+
+    elem1.onclick = function() { alert("Привет"); };
+    elem1.addEventListener("click", handler1); // Спасибо!
+    elem1.addEventListener("click", handler2); // Спасибо ещё раз!
+</script>
+<!--Свойства обьекта события-->
+<input type="button" value="Кликай" id="elem2">
+<script>
+    elem2.onclick = function (event) {
+        //Вывести тип события, элемент и координаты клика
+        alert(event.type + " на " +  event.currentTarget);
+        alert(event.clientX + " :" + event.clientY);
+    }
+</script>
+
+
+<div class="d1" onclick="alert(1)">1<!-- самый верхний, в представлении DOM, элемент -->
+    <div class="d2" onclick="alert(2)">2
+        <div class="d3" onclick="alert(3)">3</div><!-- самый глубокий элемент -->
+    </div>
+</div>
+<script>
+    element.onclick = function(event) {
+        event = event || window.event; // кросс-браузерно
+
+        if (event.stopPropagation) {
+            // Вариант стандарта W3C:
+            event.stopPropagation();
+        }
+    }
+</script>
+<div id="capt1" class="d1">
+    <div id="capt2" class="d2">
+        <div id="capt3" class="d3"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("capt1").addEventListener("click", function() { alert(1) }, true);
+    document.getElementById("capt2").addEventListener("click", function() { alert(2) }, true);
+    document.getElementById("capt3").addEventListener("click", function() { alert(3) }, true);
+</script>
+<div id="caption1" class="d1">
+<div id="caption2" class="d2">
+    <div id="caption3" class="d3"></div>
+</div>
+</div>
+
+<script>
+    document.getElementById("caption1").addEventListener("click", function() { alert(1) }, true);
+    document.getElementById("caption2").addEventListener("click", function() { alert(2) }, true);
+    document.getElementById("caption3").addEventListener("click", function() { alert(3) }, true);
+    document.getElementById("caption1").addEventListener("click", function() { alert(1) }, false);
+    document.getElementById("caption2").addEventListener("click", function() { alert(2) }, false);
+    document.getElementById("caption3").addEventListener("click", function() { alert(3) }, false);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+ form атрибуты:
+     accept-charset -
+     Устанавливает кодировку, в
+     которой сервер может принимать и обрабатывать данные.
+
+     action - Адрес программы или документа,
+     который обрабатывает данные формы.
+
+     autocomplete - Включает автозаполнение полей формы.
+
+     enctype - Способ кодирования данных формы.
+
+     method - Метод протокола HTTP.
+
+     name - Имя формы.
+
+     novalidate - Отменяет встроенную проверку данных
+     формы на корректность ввода
+
+     target - Имя окна или фрейма, куда обработчик
+     будет загружать возвращаемый результат.
+<form action="mailto:lobodin@itstep.org" method="get"
+      enctype="text/plain"
+      accept-charset="window-1251">
+    <p><b>Как по вашему мнению расшифровывается
+        аббревиатура &quot;ОС&quot;?</b></p>
+    <p><input type="radio" name="answer"
+              value="a1" title="Состав">
+        Офицерский состав<Br>
+        <input type="checkbox" name="answer"
+               value="a2">Операционная система<Br>
+        <input type="radio" name="answer" value="a3">
+        Большой полосатый мух</p>
+    <p><input type="submit"></p>
+</form>
+
+<form autocomplete="on" name="form1">
+    <p>Имя: <input name="user" placeholder="Имя">
+    </p>
+    <p>Пароль: <input name="pass" type="password"
+                      placeholder="Пароль">
+    </p>
+    <p><input type="submit" value="Отправить"></p>
+</form>
+
+<form action="../js/First.js" novalidate target="_blank">
+    <p><input required placeholder="Имя"></p>
+    <p><input type="email" required
+              placeholder="Ваш email"></p>
+    <p><input type="url" required placeholder="Сайт"></p>
+    <p><input type="submit"></p>
+</form>
+
+ <form name="test" method="post" action="input1.php">
+     <p><b>Ваше имя:</b><br>
+         <input type="text" size="40">
+     </p>
+     <p><b>Каким браузером в основном пользуетесь:
+     </b><Br>
+         <input type="radio" name="browser"
+                value="ie"> Internet Explorer<Br>
+         <input type="checkbox" name="browser"
+                value="opera"> Opera<br>
+         <input type="radio" name="browser"
+                value="firefox"> Firefox<Br>
+     </p>
+     <p>Комментарий<Br>
+         <textarea placeholder="Коменты"
+                   name="comment" cols="40"
+                   rows="3"></textarea></p>
+     <p><input type="submit" value="Отправить">
+         <input type="reset" value="Очистить"></p>
+</form>
+</body>
+</html>

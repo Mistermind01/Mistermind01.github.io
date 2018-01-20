@@ -1,0 +1,578 @@
+/*   1  */
+/*
+#bar {
+    top: -90px; right:1%; !* Положение *!
+    padding: 1%; !* Поля *!
+    margin: 0; !* Отступы *!
+    position: absolute; !* Абсолютное позиционирование *!
+    width: 3%; !* Ширина *!
+    background: #00f200; !* Цвет фона *!
+    color: #fff731; !* Цвет текста *!
+    text-align: left; !* Выравнивание по центру *!
+    !* Анимация *!
+    transition: top 1s ease-out 0.5s;!* Переход *!
+    transition-duration: 1s; !* длительность анимации*!
+}
+#bar:hover {
+    top: 0; !*При наведении курсора*!
+}
+*/
+
+/* transition-timing-function:
+ease        Возможные значения
+            Анимация начинается медленно,
+            затем ускоряется и к концу движения
+            опять замедляется.
+            Аналогично cubic-bezier(0.25,0.1,0.25,1).
+ease-in     Анимация медленно начинается,
+            к концу ускоряется.
+            Аналогично cubic-bezier(0.42,0,1,1).
+ease-out    Анимация начинается быстро,
+            к концу замедляется.
+            Аналогично cubic-bezier(0,0,0.58,1).
+ease-in-out Анимация начинается и
+            заканчивается медленно.
+            Аналогично cubic-bezier(0.42,0,0.58,1).
+linear      Одинаковая скорость от начала и до конца.
+step-start  Как таковой анимации нет.
+            Стилевые свойства сразу же
+            принимают конечное значение.
+step-end    Как таковой анимации нет.
+            Стилевые свойства находятся в
+            начальном значении заданное время,
+            затем сразу же принимают конечное значение.
+steps       Ступенчатая функция,
+            имеющая заданное число шагов.
+            transition-timing-function:
+            steps(<число>, start | end)*/
+
+/*    2   ---------------------------------------------------------------------------------------------------------------------*/
+/*
+.warn {
+    padding: 1%;
+    border-radius: 40%;
+    text-align: center ;
+    transition-duration: 2s;!* длительность анимации*!
+}
+.warn:hover {
+    background: #fc0;
+}
+*/
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+/* Всплывающий текст */
+/*
+.warm {
+    background: #fc0;
+    padding: 1%;
+    top: -50%;
+    position: absolute;!* Абсолютное позиционирование *!
+    left: 0; right: 0;
+}
+.fadeInTop {
+    animation-name: fadeInTop;!* Имя для вызова фунции*!
+    animation-duration: 1s; !* Продолжительность анимации *!
+    animation-delay: 0.5s; !* Задержка *!
+    animation-fill-mode: forwards;
+    !* Остановка после конца анимации*!
+}
+@keyframes fadeInTop {
+    !*Правило @keyframes устанавливает ключевые
+    кадры при анимации элемента.*!
+    from {
+        top: -50%;
+    }
+    to {
+        top: 0;
+    }
+}
+*/
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Всплывающий текст при наведении курсора*/
+/*.menu {
+    position: absolute;
+    height: 50px; width: 100%;
+    background: #22ff3a;
+    border-bottom: 10px solid #1618ff;
+    top: -50px;
+    !* Анимация *!
+    transition-property: top;
+    !*Устанавливает имя стилевого свойства*!
+    transition-duration: 2s;
+    !* длительность анимации*!
+}
+.menu:hover {
+    top: 0;
+}*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+ /*Прогресс бар*/
+/*.progress {
+    background: #4add22; !* Фон *!
+    border: 2px solid #2435fc; !* Рамка *!
+    height: 30px; !* Высота *!
+    position: relative; !* Относительное позиционирование *!
+}
+.progress:hover::before{
+    width: 100%;
+}
+.progress::before{
+    transition-timing-function: ease-out !*steps(10,end)*!;
+     !*Скорость изменения стилевого свойства*!
+    transition-duration: 5s; !*длительность анимации*!
+    content: '';
+    position: absolute;  !*Абсолютное позиционирование*!
+    height: 100%; width: 0;
+    background: #fffb29;  !*Фон*!
+}*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Проценты */
+/*
+body {
+    margin: 0;
+    background: #c2beb3;
+}
+.loader-container {
+    position: absolute;
+    top: calc(50% - 65px);
+    left: calc(50% - 65px);
+    width: 100px;
+    height: 100px;
+    background: #BDE2E0;
+    border-radius: 40%;
+    border: 15px solid #D7695A;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.58);
+    color: #1312ff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 100px;
+    overflow: hidden;
+}
+@keyframes load {
+    100% {
+        transform: translateY(-1100px);
+    }
+}
+.loader {
+    animation: load 11s steps(11, end) infinite;
+}
+*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Направление анимации */
+/*
+body {
+    margin: 0;
+    text-align: center;
+}
+.container {
+    width: 660px;
+    margin: 50px auto;
+}
+ul {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 40px;
+}
+li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+}
+li:nth-child(1) {
+    background: #2fff43
+}
+li:nth-child(2) {
+    background:#BBDADE
+}
+li:nth-child(3) {
+    background:#F6D5A1
+}
+li:nth-child(4) {
+    background:#FAC0B0
+}
+li:nth-child(5) {
+    background:#FF615B
+}
+.alternate li {
+    animation: shake .7s linear alternate infinite;
+}
+.alternate-reverse li {
+    animation: shake .7s linear alternate-reverse infinite;
+}
+.normal li {
+    animation: shake 0.7s steps(2, end) normal infinite;
+}
+.reverse li {
+    animation: shake 0.7s linear reverse infinite;
+}
+@keyframes shake {
+    100% {
+        transform: translateX(-30px);
+    }
+}
+*/
+/*--------------------------------------------------------------------------------------*/
+/* квадраты */
+/**{
+    box-sizing:border-box;
+}
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+@keyframes loader {
+    0% {
+        transform:rotate(-45deg)
+    }
+    50%{
+        transform:rotate(-135deg)
+    }
+    100%{
+        transform:rotate(-225deg)
+    }
+}
+@keyframes span-1 {
+    0% {
+        transform:translate(0);
+    }
+    50%{
+        transform:translate(-50px, 0);
+        border-color: #252bee
+    }
+    100%{
+        transform:translate(0);
+    }
+}
+@keyframes span-2 {
+    0%{
+        transform:translate(0);
+    }
+    50%{
+        transform:translate(50px, 0);
+        border-color:#875678
+    }
+    100%{
+        transform:translate(0);
+    }
+}
+@keyframes span-3 {
+    0%{
+        transform:translate(0);
+    }
+    50%{
+        transform:translate(0, -50px);
+        border-color:#FF9900
+    }
+    100%{
+        transform:translate(0);
+    }
+}
+@keyframes span-4 {
+    0%{
+        transform:translate(0);
+    }
+    50%{
+        transform:translate(0, 50px);
+        border-color:#00E4F6
+    }
+    100%{
+        transform:translate(0);
+    }
+}
+.loader {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    animation: loader 2s infinite ease-in-out;
+}
+.loader span {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 4px solid #ff333a;
+}
+.loader span:nth-child(1) {
+    animation: span-1 2s ease-in-out infinite;
+}
+.loader span:nth-child(2) {
+    animation: span-2 2s ease-in-out infinite;
+}
+.loader span:nth-child(3) {
+    animation: span-3 2s ease-in-out infinite;
+}
+.loader span:nth-child(4) {
+    animation: span-4 2s ease-in-out infinite;
+}*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Светофор */
+/*
+body {
+    margin: 0;
+    background-image:
+            linear-gradient(-45deg, transparent 50%, #E8E8E4 50%,
+                                    #E8E8E4 55%, transparent 55%),
+            linear-gradient(-45deg, #E8E8E4 5%, transparent 5%);
+    background-color: #FEFFFE;
+    background-size: 1em 1em;
+}
+section {
+    width: 660px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.container, .container1, .container2 {
+    padding: 30px 0 20px;
+    width: 210px;
+    text-align: center;
+    float: left;
+}
+ul {
+    list-style: none;
+    padding: 10px;
+    display: inline-block;
+    background: #3C4147;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,.7),
+                      2px 2px 1px #3C4147;
+}
+li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: black;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,.4),
+                inset -2px -2px 4px rgba(255,255,255,.6);
+}
+@keyframes traffic {
+    100%{background: #FB000D;}
+}
+@keyframes traffic1 {
+    100%{background: #FED21D;}
+}
+@keyframes traffic2 {
+    100%{background: #7DFA04;}
+}
+li:nth-of-type(1) {
+    margin-bottom:5px;
+    animation: traffic 2s forwards;
+}
+li:nth-of-type(2) {
+    margin-bottom: 5px;
+    animation: traffic1 2s forwards 2s;
+}
+li:nth-of-type(3) {
+    animation: traffic2 2s forwards 4s;
+}
+
+.container1 li:nth-of-type(1) {
+    margin-bottom:5px;
+    animation: traffic 2s backwards;
+}
+.container1 li:nth-of-type(2) {
+    margin-bottom: 5px;
+    animation: traffic1 2s backwards 2s;
+}
+.container1 li:nth-of-type(3) {
+    animation: traffic2 2s backwards 4s;
+}
+.container2 li:nth-of-type(1) {
+    margin-bottom:5px;
+    animation: traffic 2s both;
+}
+.container2 li:nth-of-type(2) {
+    margin-bottom: 5px;
+    animation: traffic1 2s both 2s;
+}
+.container3 li:nth-of-type(3) {
+    animation: traffic2 2s both 4s;
+}
+p{
+    margin:0
+}
+*/
+/*------------------------------------------------------------------------------------*/
+/* Трансформация квадрата в круг */
+/*body {
+    margin: 0;
+    background: #F4EDE5;
+}
+div {
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+span {
+    display: block;
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
+    animation: run 2s infinite ease-in-out;
+}
+
+.one {
+    background: #F3B222;
+    animation-delay: 1.5s;
+}
+.two {
+    background: #F0653E;
+    animation-delay: 1s;
+}
+.three {
+    background: #B9C0C0;
+    animation-delay: 0.5s;
+}
+.four {
+    background: #8F7473;
+}
+
+@keyframes run {
+    0% {
+        transform: translate(0%);
+        border-radius: 50%;
+    }
+    25% {
+        transform: translate(150%) scale(0.5);
+        border-radius: 0;
+    }
+    50% {
+        transform: translate(150%, 150%);
+        border-radius: 50%;
+    }
+    75% {
+        transform: translate(0%, 150%) scale(0.5);
+        border-radius: 0;
+    }
+}*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Часы */
+body {
+    margin: 0;
+    background-color: white;
+    background-image:
+            radial-gradient(#FFAE38 2px, transparent 3px);
+    background-size: 20px 20px;
+}
+.container {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+}
+.clock {
+    background: #7e8c93;
+    border-radius: 50px;
+    box-shadow: 6px 6px 6px #6d797e;
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
+.clock-inner {
+    background: #f9f9f9;
+    border-radius: 30%;
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    left: calc(50% - 80px);
+    top: calc(50% - 80px);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.88),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.69);
+}
+.clock-numbers {
+    padding-left: 0;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 60px);
+    list-style: none;
+    margin: 0;
+}
+.clock-numbers li {
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    margin: -10px;
+    position: absolute;
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.3);
+    color: #544E3E;
+    font-weight: bold;
+}
+.clock-numbers li:nth-child(1) {
+    left: 50%;
+    top: 0;
+}
+.clock-numbers li:nth-child(2) {
+    right: 0;
+    top: 50%;
+}
+.clock-numbers li:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+}
+.clock-numbers li:nth-child(4) {
+    left: 0;
+    top: 50%;
+}
+.clock-minutes {
+    height: 60px;
+    width: 2px;
+    background: #D56851;
+    border-radius: 2px;
+    position: absolute;
+    top: calc(50% - 60px);
+    left: calc(50% - 1px);
+    transform-origin: 1px 60px;
+    animation: clock 60s steps(60, end) infinite;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+.clock:hover .clock-minutes{
+    animation-play-state: paused;
+}
+.clock-minutes:before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #D56851;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+    top: calc(100% - 4px);
+    left: calc(100% - 5px);
+}
+@keyframes clock {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+h3 {
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+
+
+
+
+
